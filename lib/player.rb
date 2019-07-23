@@ -1,4 +1,4 @@
-#require "pry" #c'était juste pour tester
+
 #class player 
 class Player 
     attr_accessor :name, :life_points #attributs d'un joueur
@@ -36,7 +36,7 @@ class Player
     end
 end 
 
-#binding.pry #c'était juste pour tester
+
 class Humanplayer
     attr_accessor :name, :life_points, :weapon_level
     def initialize(name)
