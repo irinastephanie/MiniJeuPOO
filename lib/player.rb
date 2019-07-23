@@ -37,4 +37,44 @@ class Player
 end 
 
 #binding.pry #c'était juste pour tester
-
+class Humanplayer
+    attr_accessor :name, :life_points, :weapon_level
+    def initialize(name)
+        @name = name.to_s
+        @life_points = 100
+        @weapon_level = 1
+    end
+    def show_state
+        puts "#{@name} a #{life_points} points de vie et une arme #{weapon_level}"
+    end 
+    def compute_damage
+        return rand(1..6) * @weapon_level
+    end
+#méthode search_weapon
+   def search_weapon
+    new_weapon = rand(1..6)
+    puts "Tu as trouvé une arme de niveau #{new_weapon}"
+        if new_weapon > @weapon_level
+        @weapon_level = new_weapon
+        puts "Youhou elle est meilleure, prends là"
+        elsif new_weapon <= @weapon_level
+        puts "Elle n'est pas mieux"
+        end
+    end
+#méthode pack de vie
+    def search_health_pack
+        health_pack = rand(1..6)
+        if health_pack == 1
+            puts "Oups, tanpi"
+        elsif health_pack == 6
+            @life_points = @life_points + 80
+            puts "Bravo, 80 points de vie"
+        else
+            @life_points = @life_points + 50
+            puts "Bravo tu as trouvé 50 points de vie!"
+        end
+        if @life_points > 100
+            @life_points = 100
+        end
+    end
+end
