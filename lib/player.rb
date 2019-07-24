@@ -37,7 +37,7 @@ class Player
 end 
 
 
-class Humanplayer
+class Humanplayer < Player
     attr_accessor :name, :life_points, :weapon_level
     def initialize(name)
         @name = name.to_s
